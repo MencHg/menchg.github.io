@@ -1,215 +1,421 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>陈孟·Codechen</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="description" content="陈孟(CodeChen)的个人网站主页。我是一个土生土长的90后黄冈人，我花了十二年时间找到了自己热爱的事业，让我一下子就爱上了这条并不平坦前端之路。">
   <meta property="og:title" content="陈孟 · CodeChen,web陈孟,陈孟">
   <link rel="icon" href="./assets/favicon.ico">
-  <title>陈孟·Codechen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="https://cdn.vuetifyjs.com/images/logos/favicon.ico">
 </head>
 <body>
- <div id="app">
-   <v-app light>
-    <v-toolbar class="white">
-      <img src="./assets/meng.png" alt="" height="50">
-    </v-toolbar>
+<div id="app">
+  <v-app>
+    <v-app-bar
+      app
+      color="white"
+      height="100"
+    >
+      <v-avatar
+        class="mr-3"
+        color="grey lighten-5"
+        size="70"
+      >
+        <v-img
+          contain
+          max-height="70%"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+        ></v-img>
+      </v-avatar>
+
+      <v-toolbar-title class="font-weight-black headline">
+        VUETIFY
+      </v-toolbar-title>
+    </v-app-bar>
+
     <v-content>
-      <section>
-        <v-parallax
-          src="https://images.pexels.com/photos/372098/pexels-photo-372098.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" height="600" >
-          <v-layout
-            column
-            align-center
-            justify-center
-            class="white--text"
+      <section id="hero">
+        <v-row no-gutters>
+          <v-img
+            :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
+            src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
           >
-            <!-- <img src="assets/logo.png" alt="Vuetify.js" height="200"> -->
-            <h1 class="white--text mb-2 display-1 text-xs-center"> 欢迎来到我的小天地 </h1>
-            <div class="subheading mb-3 text-xs-center"> Welcome </div>
-            <v-btn
-              class="green lighten-2 mt-5"
-              dark
-              large
-              href="http://www.oncentent.com"
-            >
-              去我的博客
-            </v-btn>
-          </v-layout>
-        </v-parallax>
+            <v-theme-provider dark>
+              <v-container fill-height>
+                <v-row
+                  align="center"
+                  class="white--text mx-auto"
+                  justify="center"
+                >
+                  <v-col
+                    class="white--text text-center"
+                    cols="12"
+                    tag="h1"
+                  >
+                    <span
+                      class="font-weight-light"
+                      :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
+                    >
+                      WELCOME TO
+                    </span>
+
+                    <br>
+
+                    <span
+                      :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
+                      class="font-weight-black"
+                    >
+                      VUETIFY
+                    </span>
+
+                  </v-col>
+
+                  <v-btn
+                    class="align-self-end"
+                    fab
+                    outlined
+                    @click="$vuetify.goTo('#about-me')"
+                  >
+                    <v-icon>mdi-chevron-double-down</v-icon>
+                  </v-btn>
+                </v-row>
+              </v-container>
+            </v-theme-provider>
+          </v-img>
+        </v-row>
       </section>
 
-      <section>
-        <v-layout
-          column
-          wrap
-          class="my-5"
-          align-center
-        >
-          <v-flex xs12 sm4 class="my-3">
-            <div class="text-xs-center">
-              <h2 class="headline">嘿！我是陈孟</h2>
-              <span class="subheading">             
-              </span>
-            </div>
-          </v-flex>
-          <v-flex xs12>
-            <v-container grid-list-xl>
-              <v-layout row wrap align-center>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="green--text text--lighten-2">school</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">关于我</div>
-                    </v-card-title>
-                    <v-card-text>
-                      嗯，大概在12年前的年初，过完春节要参加中考前最后的一学期，
-                      报名前一天我退学了，结束了自己的学生时代。
-                      从此所有的考试似乎都和我无关了。在后来的几年里街边餐馆、
-                      工厂日夜兼程的车间里、电脑城拥挤的走道里、 灯红酒绿的酒吧里、
-                      五连坐奋战的网吧里···都有我的身影，
-                      大多数这个年龄退学的同龄人在经历的事情我都 在一一经历着，
-                      在这些日子里我唯一直保持的不错是看书的习惯。
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="green--text text--lighten-2">email</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">筑梦前端</div>
-                    </v-card-title>
-                    <v-card-text>
-                      在那个电脑还不是很普及的时候，我凑钱买了一台 自己的电脑，
-                      希望能更好学习编程语言，在那个时候家里并不理解我的做法。
-                      身边的人都把我当异类，听的最多的 是整天捣鼓电脑，能又什么出路。
-                      那时候学习这些对我来说本是举步维艰，学习遇到瓶颈的时候无人沟通。
-                      久而久之 这个事情也就放弃了。直到18年的9月份我开始正式接触web前端，
-                      自此一发不可收拾，找各类书籍网上搜资料，开始 在各大教学课堂公开课混迹，
-                      自此筑梦前端。
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="green--text text--lighten-2">book</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">展望2019</div>
-                    </v-card-title>
-                    <v-card-text>
-                      中间有很长一段时间由于工作的原因，没有精力去加入学习搁置了学习计划。
-                      往后的很长一段时间里都很忙， 后来终于下定决心,全身心投入到web的世界里遨游，
-                      我辞掉了当时的工作回到了老家，开始了我的前端之路， 这就是我的故事，
-                      一个花了12年时间找到了自己努力方向的人。19年给自己定一个小目标，
-                      拿下阿里云ACP证书！！！
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-flex>
-        </v-layout>
-      </section>
+      <section id="about-me">
+        <div class="py-12"></div>
 
-      <section>
-        <v-parallax src="assets/section.jpg" height="380">
-          <v-layout column align-center justify-center>
-            <div class="headline white--text mb-3 text-xs-center">
-              面朝大海春暖花开·我们的努力终将被时间见证
-            </div>
-            <em>每个人的成功之路都是不可被复刻的</em>
-            <v-btn
-              class="green lighten-2 mt-5" dark large href="#">
-              在路上从不停歇
-            </v-btn>
-          </v-layout>
-        </v-parallax>
-      </section>
+        <v-container class="text-center">
+          <h2 class="display-2 font-weight-bold mb-3">ABOUT ME</h2>
 
-      <section>
-        <v-container grid-list-xl>
-          <v-layout row wrap justify-center class="my-5">
-            <v-flex xs12 sm4>
-              <v-card class="elevation-0 transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">网站相关信息</div>
-                </v-card-title>
-                <v-card-text>
-                  <p>-本站展示内容如涉侵权请联系删除-<p>
-                  <p>全栈江湖，吾之所往.</p>
-                  <p> 鄂ICP备19000334号 - 1</p>
-                  <p>Copyright © vuetify · CodeChen Blog All Rights Reserved.</p>
-                </v-card-text>
-              </v-card>
-            </v-flex>
-            <v-flex xs12 sm4 offset-sm1>
-              <v-card class="elevation-0 transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">联系我</div>
-                </v-card-title>
-                <v-card-text>
-                  如果你再浏览过程中遇到任何问题，你可以通过下面的联系方式告诉我，我会在看到后的的第一时间答复你。
-                </v-card-text>
-                <v-list class="transparent">
-                  
-                  <v-list-tile>
-                    <v-list-tile-action>
-                      <v-icon class="green--text text--lighten-2">place</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>WuHan, China</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <v-list-tile>
-                    <v-list-tile-action>
-                      <v-icon class="green--text text--lighten-2">email</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>xifengweb@outlook.com</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                </v-list>
-              </v-card>
-            </v-flex>
-          </v-layout>
+          <v-responsive
+            class="mx-auto mb-8"
+            width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+
+          <v-responsive
+            class="mx-auto title font-weight-light mb-8"
+            max-width="720"
+          >
+            Vuetify is the #1 component library for Vue.js and has been in active development since 2016. The goal of the project is to provide users with everything that is needed to build rich and engaging web applications using the Material Design specification. It accomplishes that with a consistent update cycle, Long-term Support (LTS) for previous versions, responsive community engagement, a vast ecosystem of resources and a dedication to quality components.
+          </v-responsive>
+
+          <v-avatar
+            class="elevation-12 mb-12"
+            size="128"
+          >
+            <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+          </v-avatar>
+
+          <div></div>
+
+          <v-btn
+            color="grey"
+            href="https://vuetifyjs.com"
+            outlined
+            large
+          >
+            <span class="grey--text text--darken-1 font-weight-bold">
+              Vuetify Documentation
+            </span>
+          </v-btn>
         </v-container>
+
+        <div class="py-12"></div>
       </section>
 
-      <v-footer class="green darken-9">
-        <v-layout row wrap align-center>
-          <v-flex xs12>
-            <div class="white--text ml-3">
-              <span>Made with</span>
-              <v-icon class="red--text">web</v-icon>
-              by <a class="white--text" href="http://www.oncentent.com" target="_blank">全栈梦</a>
-              and <a class="white--text" href="https://github.com/webmenc">webmenc</a>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-footer>
+      <section
+        id="features"
+        class="grey lighten-3"
+      >
+        <div class="py-12"></div>
+
+        <v-container class="text-center">
+          <h2 class="display-2 font-weight-bold mb-3">VUETIFY FEATURES</h2>
+
+          <v-responsive
+            class="mx-auto mb-12"
+            width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+
+          <v-row>
+            <v-col
+              v-for="({ icon, title, text }, i) in features"
+              :key="i"
+              cols="12"
+              md="4"
+            >
+              <v-card
+                class="py-12 px-4"
+                color="grey lighten-5"
+                flat
+              >
+                <v-theme-provider dark>
+                  <div>
+                    <v-avatar
+                      color="primary"
+                      size="88"
+                    >
+                      <v-icon
+                        large
+                        v-text="icon"
+                      ></v-icon>
+                    </v-avatar>
+                  </div>
+                </v-theme-provider>
+
+                <v-card-title
+                  class="justify-center font-weight-black text-uppercase"
+                  v-text="title"
+                ></v-card-title>
+
+                <v-card-text
+                  class="subtitle-1"
+                  v-text="text"
+                >
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="py-12"></div>
+      </section>
+
+      <section id="stats">
+        <v-parallax
+          :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
+          src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+        >
+          <v-container fill-height>
+            <v-row class="mx-auto">
+              <v-col
+                v-for="[value, title] of stats"
+                :key="title"
+                cols="12"
+                md="3"
+              >
+                <div class="text-center">
+                  <div
+                    class="display-3 font-weight-black mb-4"
+                    v-text="value"
+                  ></div>
+
+                  <div
+                    class="title font-weight-regular text-uppercase"
+                    v-text="title"
+                  ></div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-parallax>
+      </section>
+
+      <section id="blog">
+        <div class="py-12"></div>
+
+        <v-container>
+          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Blog</h2>
+
+          <v-responsive
+            class="mx-auto mb-12"
+            width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+
+          <v-row>
+            <v-col
+              v-for="({ src, text, title }, i) in articles"
+              :key="i"
+              cols="12"
+              md="4"
+            >
+              <v-img
+                :src="src"
+                class="mb-4"
+                height="275"
+                max-width="100%"
+              ></v-img>
+
+              <h3
+                class="font-weight-black mb-4 text-uppercase"
+                v-text="title"
+              ></h3>
+
+              <div
+                class="title font-weight-light mb-5"
+                v-text="text"
+              ></div>
+
+              <v-btn
+                class="ml-n4 font-weight-black"
+                text
+              >
+                Continue Reading
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="py-12"></div>
+      </section>
+
+      <v-sheet
+        id="contact"
+        color="#333333"
+        dark
+        tag="section"
+        tile
+      >
+        <div class="py-12"></div>
+
+        <v-container>
+          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Contact Me</h2>
+
+          <v-responsive
+            class="mx-auto mb-12"
+            width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+
+          <v-theme-provider light>
+            <v-row>
+              <v-col cols="12">
+                <v-text-field
+                  flat
+                  label="Name*"
+                  solo
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-text-field
+                  flat
+                  label="Email*"
+                  solo
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-text-field
+                  flat
+                  label="Subject*"
+                  solo
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-textarea
+                  flat
+                  label="Message*"
+                  solo
+                ></v-textarea>
+              </v-col>
+
+              <v-col
+                class="mx-auto"
+                cols="auto"
+              >
+                <v-btn
+                  color="accent"
+                  x-large
+                >
+                  Submit
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-theme-provider>
+        </v-container>
+
+        <div class="py-12"></div>
+      </v-sheet>
     </v-content>
+
+    <v-footer
+      class="justify-center"
+      color="#292929"
+      height="100"
+    >
+      <div class="title font-weight-light grey--text text--lighten-1 text-center">
+        &copy; {{ (new Date()).getFullYear() }} — Vuetify, LLC — Made with 💜 by John Leider
+      </div>
+    </v-footer>
   </v-app>
  </div>
- <script src="https://unpkg.com/vue/dist/vue.js"></script>
- <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
  <script>
-   new Vue({
+  new Vue({
     el: '#app',
+    vuetify: new Vuetify(),
     data () {
       return {
+        articles: [
+          {
+            src: 'https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+            title: 'Mobile first & Responsive',
+            text: 'Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.',
+          },
+          {
+            src: 'https://images.unsplash.com/photo-1475938476802-32a7e851dad1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+            title: 'Think outside the box',
+            text: 'Nam ut leo ipsum. Maecenas pretium aliquam feugiat. Aenean vel tempor est, vitae tincidunt risus. Sed sodales vestibulum nibh.',
+          },
+          {
+            src: 'https://images.unsplash.com/photo-1416339442236-8ceb164046f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1892&q=80',
+            title: 'Small changes, big difference',
+            text: 'Vestibulum in dictum velit, in rhoncus nibh. Maecenas neque libero, interdum a dignissim in, aliquet vitae lectus. Phasellus lorem enim, luctus ut velit eget.',
+          },
+        ],
+        features: [
+          {
+            icon: 'mdi-account-group-outline',
+            title: 'Vibrant Community',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+          },
+          {
+            icon: 'mdi-update',
+            title: 'Frequent Updates',
+            text: 'Sed ut elementum justo. Suspendisse non justo enim. Vestibulum cursus mauris dui, a luctus ex blandit. Lorem ipsum dolor sit amet consectetur adipisicing elit. qui ipsum eveniet facilis obcaecati corrupti consectetur adipisicing elit.',
+          },
+          {
+            icon: 'mdi-shield-outline',
+            title: 'Long-term Support',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+          },
+        ],
+        stats: [
+          ['24k', 'Github Stars'],
+          ['330+', 'Releases'],
+          ['1m', 'Downloads/mo'],
+          ['5m', 'Total Downloads'],
+        ],
       }
     }
   })
- </script>
+</script>
 </body>
 </html>
